@@ -1,0 +1,49 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependências do Node.js
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Arquivos TypeScript transpilados
+*.js
+*.js.map
+*.d.ts
+
+# Configuração do ambiente
+.env
+.env.*.local
+
+# Diretórios temporários
+temp/
+.tmp/
+
+# Configurações do editor (opcional, dependendo de suas preferências)
+.vscode/
+.idea/
+*.swp
+
+# Cache do TypeScript
+*.tsbuildinfo
+
+# Cache do npm ou Yarn
+.npm/
+.pnp.*
+.pnp.js
+
+# Arquivos de teste
+coverage/
+*.lcov
+
+# Cache de pacotes do pacote-lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
