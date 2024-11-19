@@ -1,13 +1,23 @@
 import { groq } from "./groqRequest";
 import { readLine } from "./input";
+import { styleText } from "./styleText";
 
 const groqInterface = new groq();
 
 const running = true;
 
 function textToken() {
-	const styleMod = require("./styleText");
-	console.log(styleMod.convertTokenToClass("Olá, **Texto marcado** __Sublinhado__ certo?"));
+	const stringOriginal: string = "Olá, **Texto marcado** __Sublinhado__ certo?";
+
+	const tokens = styleText.convertTokenToClass(stringOriginal);
+
+	console.log(stringOriginal);
+
+	console.log(tokens);
+
+	tokens.forEach(Element => {
+		process.stdout.write(Element.style + Element.text);
+	});
 }
 
 async function main() {
