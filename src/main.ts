@@ -5,6 +5,11 @@ const groqInterface = new groq();
 
 const running = true;
 
+function textToken() {
+	const styleMod = require("./styleText");
+	console.log(styleMod.convertTokenToClass("Olá, **Texto marcado** __Sublinhado__ certo?"));
+}
+
 async function main() {
 	while(running) {
 		process.stdout.write("\nYou: ");
@@ -14,4 +19,6 @@ async function main() {
 	}
 }
 
-main();
+textToken();
+
+// main();
