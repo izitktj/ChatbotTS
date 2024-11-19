@@ -4,7 +4,7 @@ import { styleText } from "./styleText";
 
 const groqInterface = new groq();
 
-const running = true;
+var running = true;
 
 async function main() {
 	while(running) {

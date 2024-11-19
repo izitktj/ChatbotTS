@@ -25,9 +25,13 @@ export class styleText {
     }
 
     public static printStyledText(text: string): void {
+        let stringBuffer: string[] = [];
+
         this.convertTokenToClass(text).forEach(Element => {
-            process.stdout.write(Element.style + Element.text);
+            stringBuffer.push(Element.style, Element.text);
         });
+
+        console.log(stringBuffer.join(""));
     }
 
     static splitParameter(text: string): string[] {
