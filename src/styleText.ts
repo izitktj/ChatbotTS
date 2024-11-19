@@ -24,6 +24,12 @@ export class styleText {
         return tokens;
     }
 
+    public static printStyledText(text: string): void {
+        this.convertTokenToClass(text).forEach(Element => {
+            process.stdout.write(Element.style + Element.text);
+        });
+    }
+
     static splitParameter(text: string): string[] {
         return text.split(/(\*\*|\_\_)/);
     }
@@ -42,7 +48,7 @@ class token {
 
 enum styles {
     normal = '\x1b[0;0m',
-    bold = '\x1b[0;1m',
+    bold = '\x1b[97;1m',
     faint = '\x1b[2;0m',
     italic = '\x1b[0;3m',
     underline = '\x1b[4;0m',
