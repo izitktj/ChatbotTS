@@ -11,7 +11,7 @@ export function readLine(): Promise<string> {
 
     rl.question("", (resposta: string) => {
       rl.close();
-      resolve(resposta);
+      resolve(resposta as string);
     });
   });
 }

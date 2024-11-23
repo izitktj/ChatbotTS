@@ -1,17 +1,28 @@
 import { groq } from "./groqRequest";
 import { readLine } from "./input";
+import { styleText } from "./styleText";
 
-const groqInterface = new groq();
+const groqInterface = new groq(groq.LLMS["GEMMA2"]);
 
-const running = true;
+var running = true;
 
 async function main() {
 	while(running) {
-		process.stdout.write("\nYou: ");
+		styleText.printStyledText("\n**You:** ");
 		const response = await groqInterface.sendMessage("user", await readLine());
 
-		console.log("\nChat: ", response);
+		styleText.printStyledText("\n**Chat:** " + response);
 	}
+}
+
+function getChatHistory(): string {
+	let chatHistory: string = "";
+
+	groqInterface.chatHistory.forEach(element => {
+		chatHistory += "\n{ Role: " + element.role + ", Message: " + element.content + " }";
+	});
+
+	return chatHistory;
 }
 
 main();
