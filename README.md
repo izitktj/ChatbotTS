@@ -19,12 +19,12 @@ Este projeto é um chatbot desenvolvido em TypeScript que utiliza a API GROQ par
 ## Instalação  
 1. Clone este repositório em seu computador:
    ```sh
-   git clone [URL_DO_REPOSITÓRIO]
+   git clone https://github.com/izitktj/ChatbotTS
    ```
 
 2. Acesse o diretório do projeto:
    ```sh
-   cd nome-do-repositorio
+   cd ChatbotTS
    ```
 
 3. Instale as dependências do projeto:
